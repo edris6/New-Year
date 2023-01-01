@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./backround.css">
 </head>
 
 <body>
@@ -13,25 +15,16 @@
     <script src="./main.js"></script>
     <div class="mydiv">
         <h1>Its the final countdown</h1>
-        <p id="every" style="text-align: center;">Current time: <span id="time"></span></p>
+        <p id="every" style="text-align: center;">Time remaning: <span id="time"></span></p>
     </div>
-    <style>
-      
-        body,
-        html {
-            height: 100%
-        }
-
-        body {
-            display: flex;
-            margin: 0;
-            flex-direction: column;
-        }
-
-        .mydiv {
-            margin: auto;
-        }
-    </style>
+    <div class="myicons_container">
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Warning!</strong> Timer goes 3, 2, 1, 0, HAPPY NEW YEARS</a>
+          </div>
+    </div>
+    
+    
 </body>
 
 </html>

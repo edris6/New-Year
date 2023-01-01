@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;600&display=optional');
+
+html body {
+    line-height: 1.5;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+}
+
+body,
+html {
+    height: 100%
+}
+
+body {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+}
+
+.mydiv {
+    margin: auto;
+}
+
+.myicons_container {
+    position: fixed;
+    bottom: 0;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
