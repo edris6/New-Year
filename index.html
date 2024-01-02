@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+  Rectangular switch 
+ <label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+  </label>
+  
+   Rounded switch 
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label> 
 
+-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" href="./backround.css">
+    <script src="navbar.js"></script>
+    <link rel="stylesheet" href="./styling/backround.css">
+    <link rel="stylesheet" href="./styling/sidebar.css">
+    <link rel="stylesheet" href="./styling/toggle.css">
 </head>
 
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
-    <script src="./main.js"></script>
+    <script src="./main.js" defer></script>
+    <img src="./images/menu.svg" class="openbutton" onclick="openNav()">
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+        
+        <label class="switch" for="checkbox1">
+            <input type="checkbox" id="checkbox1">
+            <span class="slider round" id="slider1"></span>
+        </label>
+        <label for="checkbox1" style="font-size: 24px;">Days remaining</label>
+        <label class="switch" for="checkbox2">
+            <input type="checkbox" id="checkbox2">
+            <span class="slider round" id="slider2"></span>
+        </label>
+        <label for="checkbox2" style="font-size: 24px;">Until Christmas</label>
+        <p onclick="window.location.href = 'licensing.html'" style="font-size: 24px; cursor: pointer;">licensing</p>
+
+        
+      </div>
+    
     <div class="mydiv">
-        <h1>Its the final countdown</h1>
+        <h1>Time until <span id="nextyear">YOUR BROWSER IS BLOCKING javascript, please enable it </span></h1>
         <p id="every" style="text-align: center;">Time remaning: <span id="time"></span></p>
     </div>
     <div class="myicons_container">
         <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-            <strong>Warning!</strong> Timer goes 3, 2, 1, 0, HAPPY NEW YEARS</a>
+            <strong>Warning!</strong> Timer goes 3, 2, 1, HAPPY NEW YEARS</a>
           </div>
     </div>
     

@@ -46,3 +46,11 @@ body {
 .closebtn:hover {
     color: black;
 }
+.openbutton{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 40px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* To indicate it's clickable */
+}
