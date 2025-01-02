@@ -1,6 +1,5 @@
 const c = console.log
 let stopcounting = false
-let testing = false
 let thedate = new Date(Date.parse(String(new Date().getFullYear() + 1) + "-01-01 00:00:00"));
 
 
@@ -15,6 +14,12 @@ function eleID(id) {
 
 function draw() {
     const Christmas = eleID("checkbox2").checked
+    if (tounixmills(thedate) == tounixmills(new Date()) || stopcounting == true) {
+        c("ITS NEW YEAR WOWOWOWOWOWOWOWOWO")
+        stopcounting = true
+        eleID("every").innerText = Christmas ? "Happy Christmas Fellas" : "ITS NEW YEARS TIME 🎉"
+        return;
+    }
     
     if (Christmas == true) {
         thedate = new Date(new Date().getFullYear(), 11, 25);
@@ -24,12 +29,7 @@ function draw() {
         eleID("nextyear").innerHTML = String(new Date().getFullYear() + 1)
     }
 
-    if (tounixmills(thedate) == tounixmills(new Date()) || stopcounting == true) {
-        c("ITS NEW YEAR WOWOWOWOWOWOWOWOWO")
-        stopcounting = true
-        eleID("every").innerText = Christmas ? "Happy Christmas Fellas" : "ITS NEW YEARS TIME 🎉"
-        return;
-    }
+   
 
     let diff = new Date(thedate.getTime() - new Date().getTime());
 
@@ -40,19 +40,25 @@ function draw() {
     let hours = diff.getUTCHours()
     let minutes = diff.getMinutes()
     let seconds = diff.getUTCSeconds()
-    let final_string = years + "y-" + months + "m-" + days + "d   " + hours + ":" + minutes + ":" + (seconds + 1)
+    let finalseconds = (seconds + 1)
+    if (finalseconds == 60 ){
+        finalseconds = ''
+    }else{
+        finalseconds = ":" + finalseconds
+    }
+    let final_string = years + "y-" + months + "m-" + days + "d   " + hours + ":" + minutes + finalseconds
     if (years == 0 && months == 0 && days == 0 && hours == 0 && minutes == 0) {
         final_string = (seconds + 1)
     } else if (years == 0 && months == 0 && days == 0 && hours == 0) {
-        final_string = minutes + ":" + (seconds + 1)
+        final_string = minutes + finalseconds
     } else if (years == 0 && months == 0 && days == 0) {
-        final_string = hours + ":" + minutes + ":" + (seconds + 1)
+        final_string = hours + ":" + minutes + finalseconds
     } else if (years == 0 && months == 0 && daysremaining == false) {
-        final_string = days + "d   " + hours + ":" + minutes + ":" + (seconds + 1)
+        final_string = days + "d   " + hours + ":" + minutes + finalseconds
     } else if (years == 0 && daysremaining == false) {
-        final_string = months + "m-" + days + "d   " + hours + ":" + minutes + ":" + (seconds + 1)
+        final_string = months + "m-" + days + "d   " + hours + ":" + minutes + finalseconds
     } else if (daysremaining == true) {
-        final_string = Math.floor((thedate - new Date()) / (1000 * 60 * 60 * 24)) + "d   " + hours + ":" + minutes + ":" + (seconds + 1)
+        final_string = Math.floor((thedate - new Date()) / (1000 * 60 * 60 * 24)) + "d   " + hours + ":" + minutes + finalseconds
     }
     eleID("time").innerText = final_string
 
