@@ -22,9 +22,13 @@ function draw() {
     }
     
     if (Christmas == true) {
-        thedate = new Date(new Date().getFullYear(), 11, 25);
+        if(new Date().getDate() > 25 && new Date().getMonth() == 11){
+            thedate = new Date(new Date().getFullYear() + 1, 11, 25);
+        }else{
+            thedate = new Date(new Date().getFullYear(), 11, 25);
+        }
         eleID("nextyear").innerHTML = "Christmas"
-    } else {
+    } else if(Christmas == false) {
         thedate = new Date(Date.parse(String(new Date().getFullYear() + 1) + "-01-01 00:00:00"));
         eleID("nextyear").innerHTML = String(new Date().getFullYear() + 1)
     }
