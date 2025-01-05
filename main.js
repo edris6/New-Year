@@ -17,12 +17,14 @@ function draw() {
     if (tounixmills(thedate) == tounixmills(new Date()) || stopcounting == true) {
         c("ITS NEW YEAR WOWOWOWOWOWOWOWOWO")
         stopcounting = true
-        eleID("every").innerText = Christmas ? "Happy Christmas Fellas" : "ITS NEW YEARS TIME 🎉"
+        eleID("every").innerText = Christmas ? "Happy Christmas" : "ITS NEW YEARS TIME 🎉"
         return;
     }
     
     if (Christmas == true) {
-        if(new Date().getDate() > 25 && new Date().getMonth() == 11){
+        if(new Date().getDate() == 25 && new Date().getMonth() == 11){
+            stopcounting = true
+        }else if(new Date().getDate() > 25 && new Date().getMonth() == 11){
             thedate = new Date(new Date().getFullYear() + 1, 11, 25);
         }else{
             thedate = new Date(new Date().getFullYear(), 11, 25);
