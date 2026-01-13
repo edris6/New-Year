@@ -39,7 +39,7 @@ function draw() {
             }else{
                 thedate = new Date(new Date().getFullYear(), 4, 29);
             }
-    
+        eleID("nextyear").innerHTML = "29th/04"
     } else {
         thedate = new Date(Date.parse(String(new Date().getFullYear() + 1) + "-01-01 00:00:00"));
         eleID("nextyear").innerHTML = String(new Date().getFullYear() + 1)
