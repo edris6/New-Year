@@ -14,6 +14,7 @@ function eleID(id) {
 
 function draw() {
     const Christmas = eleID("checkbox2").checked
+    const two_nine_april = eleID("checkbox3").checked
     if (tounixmills(thedate) == tounixmills(new Date()) || stopcounting == true) {
         c("ITS NEW YEAR WOWOWOWOWOWOWOWOWO")
         stopcounting = true
@@ -30,7 +31,16 @@ function draw() {
             thedate = new Date(new Date().getFullYear(), 11, 25);
         }
         eleID("nextyear").innerHTML = "Christmas"
-    } else if(Christmas == false) {
+    } else if(two_nine_april == true){
+            if(new Date().getDate() == 29 && new Date().getMonth() == 4){
+                stopcounting = true
+            }else if(new Date().getDate() > 29 && new Date().getMonth() == 4){
+                thedate = new Date(new Date().getFullYear() + 1, 4, 29);
+            }else{
+                thedate = new Date(new Date().getFullYear(), 4, 29);
+            }
+    
+    } else {
         thedate = new Date(Date.parse(String(new Date().getFullYear() + 1) + "-01-01 00:00:00"));
         eleID("nextyear").innerHTML = String(new Date().getFullYear() + 1)
     }
